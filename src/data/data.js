@@ -1,9 +1,9 @@
-import apple_byz_s8251 from '../assets/img/apple_byz_s8251_1.png'
-import apple_ear_pods_1 from '../assets/img/apple_ear_pods_1.png'
-import apple_ear_pods_2 from '../assets/img/apple_ear_pods_2.png'
-import apple_air_pods from '../assets/img/apple_air_pods.png'
-import borofone_bo4 from '../assets/img/borofone_bo4.png'
-import gerlax_gh4 from '../assets/img/gerlax_gh-44.png'
+import apple_byz_s8251 from '../../public/assets/img/apple_byz_s8521_1.png'
+import apple_ear_pods_1 from '../../public/assets/img/apple_ear_pods_1.png'
+import apple_ear_pods_2 from '../../public/assets/img/apple_ear_pods_2.png'
+import apple_air_pods from '../../public/assets/img/apple_air_pods.png'
+import borofone_bo4 from '../../public/assets/img/borofone_bo4.png'
+import gerlax_gh4 from '../../public/assets/img/gerlax_gh-4.png'
 
 export const data = [
 	{

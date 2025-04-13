@@ -44,15 +44,15 @@ export default (env: EnvVariables) => {
 					],
 				},
 				{
-					test: /\.tsx?$/,
+					test: /\.(ts|tsx)$/,
 					use: 'ts-loader',
 					exclude: /node_modules/,
 				},
 				{
-					test: /\.(png|jpg|jpeg|gif|svg)$/i,
+					test: /\.(png|jpg|jpeg|gif)$/i,
 					type: 'asset/resource',
 					generator: {
-						filename: 'assets/images/[name].[hash][ext]',
+						filename: 'public/assets/img/[name].[hash][ext]',
 					}
 				},
 				{
@@ -73,20 +73,20 @@ export default (env: EnvVariables) => {
 		// Подключение плагинов, в параметр-массив передаются экземпляры объектов
 		plugins: [
 			new dotnenv,
-			new webpack.DefinePlugin({
-				'process.env.IS_DEV':isDev,
-			}),
+			// new webpack.DefinePlugin({
+			// 	'process.env.IS_DEV':JSON.stringify(isDev),
+			// }),
 			new HtmlWebpackPlugin({
 				template: path.resolve(__dirname, 'public', 'index.html'),
 			}),
-			new CopyPlugin({
-				patterns: [
-				  {
-					from: path.resolve(__dirname, 'public'),
-					to: path.resolve(__dirname, 'dist'),
-				  },
-				],
-			  }),
+			// new CopyPlugin({
+			// 	patterns: [
+			// 	  {
+			// 		from: path.resolve(__dirname, 'public', 'assets'),
+			// 		to: path.resolve(__dirname, 'dist', 'assets'),
+			// 	  },
+			// 	],
+			//   }),
 		].filter(Boolean),
 		
 	}

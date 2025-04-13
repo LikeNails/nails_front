@@ -2,8 +2,8 @@
 	"compilerOptions": {
 		"outDir": "./dist/",
 		"noImplicitAny": true,
-		"module": "ESNext",
-		"target": "es6",
+		"module": "esnext",
+		"target": "ES2022",
 		"jsx": "react-jsx",
 		"allowJs": true,
 		"moduleResolution": "node",
@@ -11,11 +11,12 @@
 		"allowSyntheticDefaultImports": true, // позволяет работать с CommonJs, получаем объект
 		"esModuleInterop": true // уходим от * as , подменяем отсутствующий export default
 	},
-	"include": ["src/**/*"],
+	"include": ["src/**/*", "models/custom.d.ts", "webpack.config.ts"],
 	"exclude": ["node_modules", "dist"],
 	"ts-node": {
 		"compilerOptions": {
-			"module": "CommonJS"
-		}
+			"module": "ESNext"
+		},
+		"esm": true
 	}
 }

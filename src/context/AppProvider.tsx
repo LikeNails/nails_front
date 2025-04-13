@@ -5,7 +5,7 @@ import { TProduct } from '../models/product';
 
 import { data } from '../data/data.js'
 
-import { TAppContext, AppContext } from './AppContext';
+import { TAppContext, Language, AppContext } from './AppContext';
 
 
 
@@ -16,6 +16,12 @@ export const AppProvider = ({children}: {children: React.ReactNode}) => {
 		count: 0
 	})
 
+	const [language, setLanguage] = useState<Language>('rus')
+
+	const changeLanguage = (language: Language) => {
+		setLanguage(language)
+	}
+	
 	const addOfferToBasket = (product_id: number) => {
 		setBasket((prevBasket) => {
 			const existingProduct = prevBasket.offers.find((offer) => 
@@ -58,6 +64,8 @@ export const AppProvider = ({children}: {children: React.ReactNode}) => {
 	const value: TAppContext = {
 		products,
 		basket,
+		language,
+		changeLanguage,
 		addOfferToBasket,
 		removeOfferFromBasket
 	}
