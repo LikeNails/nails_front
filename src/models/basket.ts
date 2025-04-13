@@ -1,0 +1,10 @@
+import { TProduct } from "./product";
+
+type Offer = {
+	product_id : number,
+	quantity: number
+}
+export interface TBasket {
+	offers: Array<Offer>
+	count: number
+}
