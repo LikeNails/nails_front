@@ -4,9 +4,9 @@
   "description": "Test project for neoflex ",
   "main": "index.js",
   "scripts": {
-    "build:dev": "webpack --env mode=production",
-    "build:prod": "webpack --end mode=development",
-    "start": "webpack serve --mode development"
+    "build:dev": "webpack --env mode=development",
+    "build:prod": "webpack --env mode=production",
+    "start": "webpack serve --env mode=development --env port=3000"
   },
   "author": "",
   "license": "ISC",

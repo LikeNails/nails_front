@@ -3,8 +3,8 @@ import { fileURLToPath } from 'url'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import webpack from 'webpack'
 import 'webpack-dev-server'
-import dotnenv from 'dotenv-webpack'
-import CopyPlugin from 'copy-webpack-plugin'
+// import Dotenv from 'dotenv-webpack'
+// import CopyPlugin from 'copy-webpack-plugin'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -17,10 +17,13 @@ interface EnvVariables {
 }
 
 export default (env: EnvVariables) => {
-
-	const isDev = env.mode === 'development'
+	
+	//const isDev = env.mode === 'development';
+	
+	const isDev = env.mode ? env.mode === 'development' : true
 	
 	const config: webpack.Configuration = {
+		mode: isDev ? 'development' : 'production',
 		entry: path.resolve(__dirname, 'src', 'index.tsx'), // Точка входа проекта,
 		devtool: isDev && 'inline-source-map',
 		devServer: isDev ? {
@@ -72,10 +75,9 @@ export default (env: EnvVariables) => {
 
 		// Подключение плагинов, в параметр-массив передаются экземпляры объектов
 		plugins: [
-			new dotnenv,
-			// new webpack.DefinePlugin({
-			// 	'process.env.IS_DEV':JSON.stringify(isDev),
-			// }),
+			new webpack.DefinePlugin({
+				'process.env.IS_DEV':isDev,
+			}),
 			new HtmlWebpackPlugin({
 				template: path.resolve(__dirname, 'public', 'index.html'),
 			}),
