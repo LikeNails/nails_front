@@ -32,6 +32,8 @@ export default (env: EnvVariables) => {
 			},
 			compress: true,
 			port: env.port ?? 3000,
+			historyApiFallback: true,
+			hot: true
 		}:undefined,
 		module: {
 			rules: [
@@ -60,7 +62,13 @@ export default (env: EnvVariables) => {
 				},
 				{
 					test: /\.svg$/,
-					use: ['@svgr/webpack'], // Используем SVGR для импорта SVG как React-компонентов
+					use: [
+						{
+							loader: '@svgr/webpack',
+							options: {
+								icon: true,
+							}
+						}], // Используем SVGR для импорта SVG как React-компонентов
 				  },
 			],
 		},
