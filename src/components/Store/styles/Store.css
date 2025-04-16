@@ -11,10 +11,18 @@
 
 }
 
+.product-category {
+	padding-bottom: 25px;
+}
+
 .product_category__header {
-	font-family: var(--font-family-shop-label);
-	color: var(--gray-text-color);
+	font-family: var(--font-family-semi-bold);
 	font-size: 20px;
+	padding-bottom: 25px;
+}
+
+.header--gray-text {
+	color: var(--gray-text-color);
 }
 
 .product {

@@ -17,9 +17,9 @@ export const Product = (props: {product:TProduct}) => {
 			</div>
 			<div className = "product__info info">
 				<div className = "row">
-					<h3 className = "product__info__h3">
+					<div className = "product__info__h3">
 						{product.title}
-					</h3>
+					</div>
 					<div className = "collapse"/>
 					<div className = "info__price">
 						<span className = "price-text price-text_current">
@@ -35,7 +35,7 @@ export const Product = (props: {product:TProduct}) => {
 				</div>
 				<div className = "row">
 					<div className = "info__rating rating">
-						<Star className = "start_svg info__rating__svg"/>
+						<Star className = "start_svg info__rating__svg svg"/>
 						<span>{product.rate}</span>
 					</div>
 					<div className = "collapse"/>

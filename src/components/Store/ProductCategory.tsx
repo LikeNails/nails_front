@@ -7,9 +7,9 @@ export const ProductCategory = (props: {products: TProducts, type: string}) => {
 
 	return (
 		<div className = "product-category">
-			<h1 className = "product_category__header header--gray-text">
+			<div className = "product_category__header header--gray-text">
 				{type}
-			</h1>
+			</div>
 			<div className = "product-category__galley gallery">
 				{
 					products.map((product)=>
