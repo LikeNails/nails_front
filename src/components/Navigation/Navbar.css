@@ -1,0 +1,30 @@
+
+
+.navbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 60px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    /* padding: 0 20px; */
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.navbar__collapse {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.navbar__basket {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+

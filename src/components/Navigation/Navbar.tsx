@@ -1,6 +1,7 @@
 import { useContext } from 'react'
-import Basket from '../../../public/assets/icons/Basket.svg'
+import Basket from '../../assets/icons/Basket.svg'
 import { AppContext } from '../../context/AppContext'
+import "./Navbar.css"
 
 export const Navbar = () => {
 

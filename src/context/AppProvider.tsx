@@ -70,5 +70,5 @@ export const AppProvider = ({children}: {children: React.ReactNode}) => {
 		removeOfferFromBasket
 	}
 
-	return <AppContext.Provider value = {value}></AppContext.Provider>
+	return <AppContext.Provider value = {value}>{children}</AppContext.Provider>
 }
