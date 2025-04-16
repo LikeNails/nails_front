@@ -40,6 +40,12 @@ body {
 	background-color: var(--background-color)
 }
 
+html, body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+  }
+
 .row {
 	display: flex;
 	/* align-items: center; */
