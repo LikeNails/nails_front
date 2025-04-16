@@ -14,7 +14,7 @@ export const Navbar = () => {
 			</div>
 			<div className = "navbar__collapse"/>
 			<div className = "navbar__basket">
-				<Basket className = "baslet-logo"/>
+				<Basket className = "baslet-logo svg"/>
 				<div className = "basket-logo_counter">
 					{basket.count}
 				</div>

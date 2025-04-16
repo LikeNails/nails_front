@@ -8,7 +8,7 @@ import gerlax_gh4 from '../assets/img/gerlax_gh-4.png'
 export const data = [
 	{
 		id: 1,
-		type: 'wire',
+		type: 'Наушники',
 		img: apple_byz_s8251,
 		title: 'Apple BYZ S8521',
 		price: 3527,
@@ -17,7 +17,7 @@ export const data = [
 	},
 	{
 		id: 2,
-		type: 'wire',
+		type: 'Наушники',
 		img: apple_ear_pods_1,
 		title: 'Apple EarPods',
 		price: 2327,
@@ -25,7 +25,7 @@ export const data = [
 	},
 	{
 		id: 3,
-		type: 'wire',
+		type: 'Наушники',
 		img: apple_ear_pods_2 ,
 		title: 'Apple EarPods',
 		price: 2327,
@@ -33,7 +33,7 @@ export const data = [
 	},
 	{
 		id: 4,
-		type: 'wire',
+		type: 'Наушники',
 		img: apple_byz_s8251,
 		title: 'Apple BYZ S8521',
 		price: 2927,
@@ -41,7 +41,7 @@ export const data = [
 	},
 	{
 		id: 5,
-		type: 'wire',
+		type: 'Наушники',
 		img: apple_ear_pods_1,
 		title: 'Apple EarPods',
 		price: 2327,
@@ -49,7 +49,7 @@ export const data = [
 	},
 	{
 		id: 6,
-		type: 'wire',
+		type: 'Наушники',
 		img: apple_ear_pods_2,
 		title: 'Apple BYZ S8521',
 		price: 2927,
@@ -57,7 +57,7 @@ export const data = [
 	},
 	{
 		id: 7,
-		type: 'wireless',
+		type: 'Беспроводные наушники',
 		img: apple_air_pods,
 		title: 'Appe AirPods',
 		price: 9527,
@@ -65,7 +65,7 @@ export const data = [
 	},
 	{
 		id: 8,
-		type: 'wireless',
+		type: 'Беспроводные наушники',
 		img: gerlax_gh4,
 		title: 'GERLAX GH-04',
 		price: 6527,
@@ -73,7 +73,7 @@ export const data = [
 	},
 	{
 		id: 9,
-		type: 'wireless',
+		type: 'Беспроводные наушники',
 		img: borofone_bo4,
 		title: 'BOROFONE BO4',
 		price: 7527,

@@ -53,6 +53,7 @@ html, body {
 
 .collapse {
 	width: 100%;
+	min-width: 30px;
 }
 
 .regular {

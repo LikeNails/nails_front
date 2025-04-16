@@ -2,7 +2,7 @@ import React, {useContext, useState} from 'react'
 import {TProducts, TProduct} from '../../models/product'
 import { AppContext } from '../../context/AppContext';
 import { ProductCategory } from './ProductCategory';
-import "./Store.css"
+import "./styles/Store.css"
 const groupProductsByType = (products: TProduct[]) => {
     return products.reduce((acc, product: TProduct) => {
         const type = product.type;

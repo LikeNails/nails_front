@@ -42,7 +42,7 @@ export const Footer = () => {
 							</Link>
 						</div>
 						<div className = "row nav__lang__row">
-							<Net className = "net-icon"/>
+							<Net className = "net-icon svg"/>
 							<button className = {
 								language === 'kaz' 
 									? "col-lang__row__button--selected" 
@@ -71,9 +71,9 @@ export const Footer = () => {
 					</div>
 				</div>
 				<div className = "footer__social">
-						<VK className = "icon icon_vk"/>
-						<Telegram className = "icon icon_telegram"/>
-						<Whatsup className = "icon icon_whatsup"/>
+						<VK className = "svg icon_vk"/>
+						<Telegram className = "svg icon_telegram"/>
+						<Whatsup className = "svg icon_whatsup"/>
 				</div>
 		</div>
 	)
