@@ -7,7 +7,8 @@ export interface TAppContext {
 	language: Language,
 	basket: TBasket,
 	changeLanguage: (language: Language) => void;
-	addOfferToBasket: (product_id: number) => void
+	addOfferToBasket: (product_id: number) => void;
+	removeOneOfferFromBasket: (product_id: number) => void;
 	removeOfferFromBasket: (product_id: number) => void;
 }
 

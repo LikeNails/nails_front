@@ -1,4 +1,5 @@
 import { useContext } from 'react'
+import { AppContext } from '../../context/AppContext'
 
 import Net from '../../assets/icons/NET.svg'
 import VK from '../../assets/icons/VK.svg'
@@ -6,15 +7,11 @@ import Telegram from '../../assets/icons/Telegram.svg'
 import Whatsup from '../../assets/icons/Whatsup.svg'
 
 import {Link} from 'react-router'
-import { AppContext } from '../../context/AppContext'
 
-import "./Footer.css"
-
-export const Footer = () => {
-
+export const FooterMobile = () => {
 	const {changeLanguage, language} = useContext(AppContext)
 	return (
-		<div className = 'footer-container'>
+		<div className = 'relative-container'>
 			<div className = 'footer'>
 					<div className = "footer__logo">
 						<div className = "main-logo">

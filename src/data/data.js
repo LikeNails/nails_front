@@ -79,4 +79,80 @@ export const data = [
 		price: 7527,
 		rate: 4.7
 	}
+
+	//для теста
+	,
+	{
+		id: 10,
+		type: 'Наушники',
+		img: apple_byz_s8251,
+		title: 'Apple BYZ S8521',
+		price: 3527,
+		on_sale: 2927,
+		rate: 4.7
+	},
+	{
+		id: 11,
+		type: 'Наушники',
+		img: apple_ear_pods_1,
+		title: 'Apple EarPods',
+		price: 2327,
+		rate: 4.5
+	},
+	{
+		id: 12,
+		type: 'Наушники',
+		img: apple_ear_pods_2 ,
+		title: 'Apple EarPods',
+		price: 2327,
+		rate: 4.5
+	},
+	{
+		id: 13,
+		type: 'Наушники',
+		img: apple_byz_s8251,
+		title: 'Apple BYZ S8521',
+		price: 2927,
+		rate: 4.7
+	},
+	{
+		id: 14,
+		type: 'Наушники',
+		img: apple_ear_pods_1,
+		title: 'Apple EarPods',
+		price: 2327,
+		rate: 4.5
+	},
+	{
+		id: 15,
+		type: 'Наушники',
+		img: apple_ear_pods_2,
+		title: 'Apple BYZ S8521',
+		price: 2927,
+		rate: 4.5
+	},
+	{
+		id: 16,
+		type: 'Беспроводные наушники',
+		img: apple_air_pods,
+		title: 'Appe AirPods',
+		price: 9527,
+		rate: 4.7
+	},
+	{
+		id: 17,
+		type: 'Беспроводные наушники',
+		img: gerlax_gh4,
+		title: 'GERLAX GH-04',
+		price: 6527,
+		rate: 4.7
+	},
+	{
+		id: 18,
+		type: 'Беспроводные наушники',
+		img: borofone_bo4,
+		title: 'BOROFONE BO4',
+		price: 7527,
+		rate: 4.7
+	}
 ]

@@ -22,20 +22,27 @@ export const Product = (props: {product:TProduct}) => {
 					</div>
 					<div className = "collapse"/>
 					<div className = "info__price">
-						<span className = "price-text price-text_current">
+						<div className = "price-text price-text_current">
 							{product.price}
-						</span>
+						</div>
 						{
-							product.on_sale && 
-							<span className = "price-text price-text_old">
-								{product.on_sale}
-							</span>
+							product.on_sale
+							? (
+								<div className = "price-text price-text_old">
+									{product.on_sale}
+								</div>
+							): (
+								<div className = "price-text price-text_old price-text_old--invisible">
+									1
+								</div>
+							)
+							
 						}
 					</div>
 				</div>
 				<div className = "row">
-					<div className = "info__rating rating">
-						<Star className = "start_svg info__rating__svg svg"/>
+					<div className = "info__rating">
+						<Star className = "svg info__rating__svg svg"/>
 						<span>{product.rate}</span>
 					</div>
 					<div className = "collapse"/>

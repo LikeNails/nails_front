@@ -1,6 +1,6 @@
 import { TProduct } from "./product";
 
-type Offer = {
+export type Offer = {
 	product_id : number,
 	quantity: number
 }

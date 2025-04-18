@@ -6,13 +6,28 @@
     align-items: center;
     height: 60px;
     /* padding: 0 20px; */
-    background-color: #f8f8f8;
-    border-bottom: 1px solid #e0e0e0;
-    margin-bottom: 25px;
+    background-color: var(--background-color);
 }
 
-.basket_logo {
+.basket-logo {
     position: relative;
+    width: 23px;
+    height: 23px;
+    color: var(--gray-text-color)
+}
+
+.basket-logo__counter {
+    top: -5px;
+    right: -5px;
+    font-family: var(--font-family-medium);
+    font-size: 15px;
+    position: absolute;
+    background-color: var(--orange-text-color);
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    color: white;
     
 }
 

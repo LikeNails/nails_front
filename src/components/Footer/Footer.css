@@ -1,11 +1,26 @@
+.footer-container {
+	position: relative;
+}
+
+@media (max-width: 970px){
+	.footer {
+		display: none !important;
+	}
+
+	.footer-mobile {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
+
 .footer {
+	align-self:baseline flex-end;
 	font-family: var(--font-family-regular);
-	font-size: 17px;
+	font-size: var(--font-size-regular);
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	align-items: start;
 	box-sizing: border-box;
-  	margin-top: 30px;
 	padding-top: 30px;
 	padding-left: 25px;
 	padding-right: 25px;
@@ -36,4 +51,50 @@
 
 .footer__social {
 	margin-left: auto;
+}
+
+.footer__nav__ul ul li{
+	margin-bottom: 10px;
+}
+
+.nav__lang__row {
+	align-items: center;
+	gap: 15px;
+}
+
+.nav__lang__row {
+	align-items: start;
+	gap: 15px;
+}
+
+.col-lang__row__button {
+	cursor: pointer;
+	font-size: var(--font-size-small);
+}
+
+.col-lang__row__button--selected {
+	cursor: pointer;
+	font-size: var(--font-size-small);
+	color: var(--orange-text-color)
+}
+
+.net-icon {
+	color: var(--gray-text-color)
+}
+
+.footer__social {
+	display: flex;
+	gap: 15px;
+}
+
+.footer__social .svg {
+	transition: color 0.3s ease;
+	width: 30px;
+	height: 30px;
+}
+
+.footer__social .svg:hover {
+	color: var(--orange-text-color);
+	width: 30px;
+	height: 30px;
 }
