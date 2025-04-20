@@ -42,7 +42,7 @@ export const Product = (props: {product:TProduct}) => {
 				</div>
 				<div className = "row">
 					<div className = "info__rating">
-						<Star className = "svg info__rating__svg svg"/>
+						<Star className = "info__rating-svg"/>
 						<span>{product.rate}</span>
 					</div>
 					<div className = "collapse"/>

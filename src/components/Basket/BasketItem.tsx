@@ -15,13 +15,13 @@ export const BasketItem = (props: {offer: TProduct & {quantity: number}} ) => {
 	return (
 		<div className = "basket-item">
 			<div className = "basket-item__visual">
-				<div className = "basket__image-container">
-					<img src={offer.img} className = "basket-item__image image"/>
-				</div>
+
+				<img src={offer.img} className = "basket-item__image"/>
+			
 
 				<div className ="counter-menu">
+						{/*иконки криво подтягивались и я решил их заменить самым доступным способом */}
 					<button className= "counter-menu__button" onClick = {()=>removeOneOfferFromBasket(offer.id)}>
-						{/* <Minus className= "svg minus"/> */}
 						{/* короткое тире */}
 						– 
 					</button>
@@ -29,7 +29,6 @@ export const BasketItem = (props: {offer: TProduct & {quantity: number}} ) => {
 						{offer.quantity}
 					</div>
 					<button className= "counter-menu__button" onClick = {()=>addOfferToBasket(offer.id)}>
-						{/* <Plus className= "svg plus"/> */}
 						+
 					</button>
 
@@ -37,7 +36,7 @@ export const BasketItem = (props: {offer: TProduct & {quantity: number}} ) => {
 			</div>
 
 			<div className = "basket-item__info">
-					<div className = "product__info__h3">
+					<div className = "product-item__h3">
 						{offer.title}
 					</div>
 					<span className = "price-text">
@@ -47,12 +46,12 @@ export const BasketItem = (props: {offer: TProduct & {quantity: number}} ) => {
 
 			<div className = "basket-item__price">
 				<span className = "price-text_black">
-					{offer.price * offer.quantity}
+					{`₽ ${offer.price * offer.quantity}`}
 				</span>
 			</div>
 			
 			<button onClick = {()=>removeOfferFromBasket(offer.id)} className = "trash-button">
-				<Trash className = "svg trash"/>
+				<Trash className = "trash-icon"/>
 			</button>
 			
 		</div>

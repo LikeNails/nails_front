@@ -2,6 +2,7 @@
 
 
 .navbar {
+    font-family: var(--font-family-name);
     display: flex;
     align-items: center;
     height: 60px;

@@ -1,26 +1,31 @@
 
 @font-face {
-	font-family: 'Montserrat-Bold';
+	font-weight: 800;
+	font-family: 'Montserrat';
 	src: url('../fonts/Montserrat/Montserrat-Bold.ttf');
 }
 
 @font-face {
-	font-family: 'Montserrat-Black';
+	font-weight: 900;
+	font-family: 'Montserrat';
 	src: url('../fonts/Montserrat/Montserrat-Black.ttf')
 }
 
 @font-face {
-	font-family: 'Montserrat-SemiBold';
+	font-font-weight: 700;
+	font-family: 'Montserrat';
 	src: url('../fonts/Montserrat/Montserrat-SemiBold.ttf');
 }
 
 @font-face {
-	font-family: 'Montserrat-Regular';
+	font-weight: 600;
+	font-family: 'Montserrat';
 	src: url('../fonts/Montserrat/Montserrat-Regular.ttf');
 }
 
 @font-face {
-	font-family: 'Montserrat-Medium';
+	font-weight: 500;
+	font-family: 'Montserrat';
 	src: url('../fonts/Montserrat/Montserrat-Medium.ttf')
 }
 
@@ -38,14 +43,15 @@
 	--font-size-regular: 17px;
 	--font-size-small: 15px;
 	--font-size-tiny: 13px;
-	--font-family-logo: 'Montserrat-Bold';
-	--font-family-semi-bold: 'Montserrat-SemiBold';
-	--font-family-regular: 'Montserrat-Regular';
-	--font-family-medium: 'Montserrat-Medium';
-	--font-family-black: 'Montserrat-Black';
+	--font-family-logo: 800;
+	--font-family-semi-bold: 700;
+	--font-family-regular: 600;
+	--font-family-medium: 500;
+	--font-family-black: 900;
+	--font-family-name: 'Montserrat'
 }
 
-@media(max-width: 420px){
+@media(max-width: 431px){
 	:root {
 	--font-size-logo: 25px; 
 	--font-size-main: 17px;
@@ -60,6 +66,7 @@
 
 
 .app-container {
+	font-family: var(--font-family-name);
 	width: 100%;
 	min-height: 100vh;
 	margin-right: auto;
@@ -73,8 +80,14 @@
 }
 
 .main-logo {
-	font-family: var(--font-family-logo);
-	font-size: var(--font-size-logo) !important
+	font-weight: 800;
+	font-size: var(--font-size-logo);
+	transition: color 0.1s ease-in-out;
+}
+
+.main-logo:active {
+	color: var(--orange-text-color);
+	background-color: none;
 }
 
 body {
@@ -100,6 +113,22 @@ html, body {
 	/* align-items: center; */
 }
 
+.row--top {
+	display: flex;
+	align-items: start;
+}
+
+.button-sm {
+	cursor: pointer;
+	font-size: var(--font-size-small);
+}
+
+.button-sm--selected {
+	cursor: pointer;
+	font-size: var(--font-size-small);
+	color: var(--orange-text-color)
+}
+
 .collapse {
 	flex-grow: 1;
 	min-width: 30px;
@@ -110,13 +139,12 @@ html, body {
 	box-sizing: border-box;
 }
 
-.regular {
+/* .regular {
 	font-family: var(--font-family-shop-label);
 	font-size: var(--font-size-regular)
-}
+} */
 
 .header {
-	font-family: var(--font-family-semi-bold);
 	font-size: var(--font-size-main);
 	font-weight: bold; 
 	white-space: nowrap;
@@ -124,7 +152,6 @@ html, body {
 
 .header--gray-text {
 	color: var(--gray-text-color);
-	font-family: var(--font-family-semi-bold);
 	font-size: var(--font-size-main);
 	font-weight: bold; 
 	white-space: nowrap;
@@ -152,7 +179,7 @@ button {
 
 .price-text {
 	font-size: var(--font-size-small);
-	font-family: var(--font-family-semi-bold);
+	font-weight: 700;
 	color: var(--light-gray-text-color)
   }
  
@@ -163,7 +190,7 @@ button {
 
   .price-text_black {
 	font-size: var(--font-size-small);
-	font-family: var(--font-family-semi-bold);
+	font-weight: 700;
 	color: black;
   }
   
@@ -190,3 +217,7 @@ button {
 	width: 100%;
 	box-sizing: border-box;
 } */
+
+.relative-container {
+	position: relative;
+}

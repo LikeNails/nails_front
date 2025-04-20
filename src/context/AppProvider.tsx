@@ -26,6 +26,12 @@ export const AppProvider = ({children}: {children: React.ReactNode}) => {
 	const changeLanguage = (language: Language) => {
 		setLanguage(language)
 	}
+
+	// const convertCurrency = (language: Language, value: number):number => {
+	// 	if(language == 'kaz'){
+	// 		return
+	// 	}
+	// }
 	
 	const addOfferToBasket = (product_id: number) => {
 		setBasket((prevBasket) => {
