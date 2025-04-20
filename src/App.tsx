@@ -1,13 +1,13 @@
-import React from 'react'
 import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom'
-import { AppProvider } from './context/AppProvider' // Импортируем контекст
+import { AppProvider } from './context/AppProvider'
 import { Navbar } from './components/Navigation/Navbar'
 import { Footer } from './components/Footer/Footer'
 import { Store } from './components/Store/Store'
 import { Basket } from './components/Basket/Basket'
 import './styles/app.css'
 import { FooterMobile } from './components/Footer/FooterMobile'
-// Главный компонент приложения
+import { OfferConfirm } from './components/OfferConfirm/OfferConfirm'
+
 const App = () => {
 	return (
 		<AppProvider>
@@ -19,8 +19,16 @@ const App = () => {
 							<Route path="/" element={<Outlet />}>
 								<Route path="/" element={<Outlet />} />
 								<Route index element={<Store />} />
-								<Route path="basket" element={<Basket />} />
+								<Route
+									path="basket"
+									element={<Basket />}
+								></Route>
+								<Route
+									path="confirm"
+									element={<OfferConfirm />}
+								/>
 							</Route>
+							<Route path="*" element={<div>404Error</div>} />
 						</Routes>
 					</main>
 					<Footer />

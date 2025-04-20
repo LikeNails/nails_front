@@ -1,10 +1,10 @@
 export interface TProduct {
-	id: number,
-	img: string,
-	type: string,
-	title: string,
-	price: number,
-	on_sale: number,
+	id: number
+	img: string
+	type: string
+	title: string
+	price: number
+	on_sale: number
 	rate: number
 }
 

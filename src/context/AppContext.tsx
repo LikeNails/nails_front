@@ -1,15 +1,16 @@
-import React, {createContext} from 'react'
+import React, { createContext } from 'react'
 import { TProducts } from '../models/product'
 import { TBasket } from '../models/basket'
 
 export interface TAppContext {
-	products: TProducts,
-	language: Language,
-	basket: TBasket,
-	changeLanguage: (language: Language) => void;
-	addOfferToBasket: (product_id: number) => void;
-	removeOneOfferFromBasket: (product_id: number) => void;
-	removeOfferFromBasket: (product_id: number) => void;
+	products: TProducts
+	language: Language
+	basket: TBasket
+	changeLanguage: (language: Language) => void
+	clearBasket: () => void
+	addOfferToBasket: (product_id: number) => void
+	removeOneOfferFromBasket: (product_id: number) => void
+	removeOfferFromBasket: (product_id: number) => void
 }
 
 export type Language = 'kaz' | 'rus' | 'eng'

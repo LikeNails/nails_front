@@ -1,45 +1,40 @@
-
-
-
 .navbar {
-    font-family: var(--font-family-name);
-    display: flex;
-    align-items: center;
-    height: 60px;
-    /* padding: 0 20px; */
-    background-color: var(--background-color);
+	font-family: var(--font-family-name);
+	display: flex;
+	align-items: center;
+	height: 60px;
+	/* padding: 0 20px; */
+	background-color: var(--background-color);
 }
 
 .basket-logo {
-    position: relative;
-    width: 23px;
-    height: 23px;
-    color: var(--gray-text-color)
+	position: relative;
+	width: 23px;
+	height: 23px;
+	color: var(--gray-text-color);
 }
 
 .basket-logo__counter {
-    top: -5px;
-    right: -5px;
-    font-family: var(--font-family-medium);
-    font-size: 15px;
-    position: absolute;
-    background-color: var(--orange-text-color);
-    border-radius: 50%;
-    width: 18px;
-    height: 18px;
-    text-align: center;
-    color: white;
-    
+	top: -5px;
+	right: -5px;
+	font-family: var(--font-family-medium);
+	font-size: 15px;
+	position: absolute;
+	background-color: var(--orange-text-color);
+	border-radius: 50%;
+	width: 18px;
+	height: 18px;
+	text-align: center;
+	color: white;
 }
 
 .navbar__collapse {
-    flex-grow: 1;
-    text-align: center;
+	flex-grow: 1;
+	text-align: center;
 }
 
 .navbar__basket {
-    position: relative;
-    display: flex;
-    align-items: center;
+	position: relative;
+	display: flex;
+	align-items: center;
 }
-

@@ -1,7 +1,7 @@
 import { AppContext } from '../../context/AppContext'
 import { useContext, useState } from 'react'
 import { BasketItem } from './BasketItem'
-
+import { Link } from 'react-router-dom'
 import { useEffect } from 'react'
 
 export const Basket = () => {
@@ -61,12 +61,9 @@ export const Basket = () => {
 								{`₽ ${sumOfBasket}`}
 							</div>
 						</div>
-						<button
-							type="button"
-							className="basket__confirm-button"
-						>
+						<Link to="/confirm" className="basket__confirm-button">
 							Перейти к оформлению
-						</button>
+						</Link>
 					</div>
 				</div>
 			) : (

@@ -13,7 +13,7 @@ export const data = [
 		title: 'Apple BYZ S8521',
 		price: 3527,
 		on_sale: 2927,
-		rate: 4.7
+		rate: 4.7,
 	},
 	{
 		id: 2,
@@ -21,15 +21,15 @@ export const data = [
 		img: apple_ear_pods_1,
 		title: 'Apple EarPods',
 		price: 2327,
-		rate: 4.5
+		rate: 4.5,
 	},
 	{
 		id: 3,
 		type: 'Наушники',
-		img: apple_ear_pods_2 ,
+		img: apple_ear_pods_2,
 		title: 'Apple EarPods',
 		price: 2327,
-		rate: 4.5
+		rate: 4.5,
 	},
 	{
 		id: 4,
@@ -37,7 +37,7 @@ export const data = [
 		img: apple_byz_s8251,
 		title: 'Apple BYZ S8521',
 		price: 2927,
-		rate: 4.7
+		rate: 4.7,
 	},
 	{
 		id: 5,
@@ -45,7 +45,7 @@ export const data = [
 		img: apple_ear_pods_1,
 		title: 'Apple EarPods',
 		price: 2327,
-		rate: 4.5
+		rate: 4.5,
 	},
 	{
 		id: 6,
@@ -53,7 +53,7 @@ export const data = [
 		img: apple_ear_pods_2,
 		title: 'Apple BYZ S8521',
 		price: 2927,
-		rate: 4.5
+		rate: 4.5,
 	},
 	{
 		id: 7,
@@ -61,7 +61,7 @@ export const data = [
 		img: apple_air_pods,
 		title: 'Appe AirPods',
 		price: 9527,
-		rate: 4.7
+		rate: 4.7,
 	},
 	{
 		id: 8,
@@ -69,7 +69,7 @@ export const data = [
 		img: gerlax_gh4,
 		title: 'GERLAX GH-04',
 		price: 6527,
-		rate: 4.7
+		rate: 4.7,
 	},
 	{
 		id: 9,
@@ -77,11 +77,9 @@ export const data = [
 		img: borofone_bo4,
 		title: 'BOROFONE BO4',
 		price: 7527,
-		rate: 4.7
-	}
-
+		rate: 4.7,
+	},
 	//для теста
-	,
 	{
 		id: 10,
 		type: 'Наушники',
@@ -89,7 +87,7 @@ export const data = [
 		title: 'Apple BYZ S8521',
 		price: 3527,
 		on_sale: 2927,
-		rate: 4.7
+		rate: 4.7,
 	},
 	{
 		id: 11,
@@ -97,15 +95,15 @@ export const data = [
 		img: apple_ear_pods_1,
 		title: 'Apple EarPods',
 		price: 2327,
-		rate: 4.5
+		rate: 4.5,
 	},
 	{
 		id: 12,
 		type: 'Наушники',
-		img: apple_ear_pods_2 ,
+		img: apple_ear_pods_2,
 		title: 'Apple EarPods',
 		price: 2327,
-		rate: 4.5
+		rate: 4.5,
 	},
 	{
 		id: 13,
@@ -113,7 +111,7 @@ export const data = [
 		img: apple_byz_s8251,
 		title: 'Apple BYZ S8521',
 		price: 2927,
-		rate: 4.7
+		rate: 4.7,
 	},
 	{
 		id: 14,
@@ -121,7 +119,7 @@ export const data = [
 		img: apple_ear_pods_1,
 		title: 'Apple EarPods',
 		price: 2327,
-		rate: 4.5
+		rate: 4.5,
 	},
 	{
 		id: 15,
@@ -129,7 +127,7 @@ export const data = [
 		img: apple_ear_pods_2,
 		title: 'Apple BYZ S8521',
 		price: 2927,
-		rate: 4.5
+		rate: 4.5,
 	},
 	{
 		id: 16,
@@ -137,7 +135,7 @@ export const data = [
 		img: apple_air_pods,
 		title: 'Appe AirPods',
 		price: 9527,
-		rate: 4.7
+		rate: 4.7,
 	},
 	{
 		id: 17,
@@ -145,7 +143,7 @@ export const data = [
 		img: gerlax_gh4,
 		title: 'GERLAX GH-04',
 		price: 6527,
-		rate: 4.7
+		rate: 4.7,
 	},
 	{
 		id: 18,
@@ -153,6 +151,6 @@ export const data = [
 		img: borofone_bo4,
 		title: 'BOROFONE BO4',
 		price: 7527,
-		rate: 4.7
-	}
+		rate: 4.7,
+	},
 ]

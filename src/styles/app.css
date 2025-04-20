@@ -1,4 +1,3 @@
-
 @font-face {
 	font-weight: 800;
 	font-family: 'Montserrat';
@@ -8,7 +7,7 @@
 @font-face {
 	font-weight: 900;
 	font-family: 'Montserrat';
-	src: url('../fonts/Montserrat/Montserrat-Black.ttf')
+	src: url('../fonts/Montserrat/Montserrat-Black.ttf');
 }
 
 @font-face {
@@ -26,17 +25,17 @@
 @font-face {
 	font-weight: 500;
 	font-family: 'Montserrat';
-	src: url('../fonts/Montserrat/Montserrat-Medium.ttf')
+	src: url('../fonts/Montserrat/Montserrat-Medium.ttf');
 }
 
 :root {
-	--background-color: #EAEAEA;
-	--background-white: #FFFFFF;
+	--background-color: #eaeaea;
+	--background-white: #ffffff;
 	--gray-text-color: #838383;
-	--orange-text-color: #FFA542;
-	--light-gray-text-color: #AAAAAA;
-	--light-orange-text-color: #FFCE7F;
-	--red-color: #DF6464;
+	--orange-text-color: #ffa542;
+	--light-gray-text-color: #aaaaaa;
+	--light-orange-text-color: #ffce7f;
+	--red-color: #df6464;
 	--my-black: #101010;
 	--font-size-logo: 25px;
 	--font-size-main: 20px;
@@ -48,22 +47,21 @@
 	--font-family-regular: 600;
 	--font-family-medium: 500;
 	--font-family-black: 900;
-	--font-family-name: 'Montserrat'
+	--font-family-name: 'Montserrat';
 }
 
-@media(max-width: 431px){
+@media (max-width: 431px) {
 	:root {
-	--font-size-logo: 25px; 
-	--font-size-main: 17px;
-	--font-size-regular: 15px;
-	--font-size-small: 13px;
-	--font-size-tiny: 9px;
+		--font-size-logo: 25px;
+		--font-size-main: 17px;
+		--font-size-regular: 15px;
+		--font-size-small: 13px;
+		--font-size-tiny: 9px;
 	}
 	.app-container {
 		padding: 0 40px 0 40px !important;
 	}
 }
-
 
 .app-container {
 	font-family: var(--font-family-name);
@@ -76,7 +74,6 @@
 	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
-
 }
 
 .main-logo {
@@ -91,16 +88,26 @@
 }
 
 body {
-	background-color: var(--background-color)
+	background-color: var(--background-color);
 }
 
-html, body {
+html,
+body {
 	margin: 0;
 	padding: 0;
 	width: 100%;
 	height: 100%;
-  }
+}
 
+input {
+	all: unset;
+}
+input:focus,
+textarea:focus,
+select:focus {
+	outline: 2px solid rgba(34, 60, 80, 0.6);
+	border-color: rgba(34, 60, 80, 0.6);
+}
 .content {
 	margin-top: 25px;
 	margin-bottom: 30px;
@@ -110,7 +117,6 @@ html, body {
 
 .row {
 	display: flex;
-	/* align-items: center; */
 }
 
 .row--top {
@@ -126,7 +132,7 @@ html, body {
 .button-sm--selected {
 	cursor: pointer;
 	font-size: var(--font-size-small);
-	color: var(--orange-text-color)
+	color: var(--orange-text-color);
 }
 
 .collapse {
@@ -139,21 +145,16 @@ html, body {
 	box-sizing: border-box;
 }
 
-/* .regular {
-	font-family: var(--font-family-shop-label);
-	font-size: var(--font-size-regular)
-} */
-
 .header {
 	font-size: var(--font-size-main);
-	font-weight: bold; 
+	font-weight: bold;
 	white-space: nowrap;
 }
 
 .header--gray-text {
 	color: var(--gray-text-color);
 	font-size: var(--font-size-main);
-	font-weight: bold; 
+	font-weight: bold;
 	white-space: nowrap;
 }
 
@@ -163,7 +164,7 @@ ul {
 	margin: 0;
 }
 
-a{
+a {
 	text-decoration: none !important;
 	color: inherit;
 }
@@ -174,49 +175,34 @@ button {
 	border: none;
 }
 
-
-
-
 .price-text {
 	font-size: var(--font-size-small);
 	font-weight: 700;
-	color: var(--light-gray-text-color)
-  }
- 
-  .price-text_current {
-	font-size: var(--font-size-regular);
-	color: var(--orange-text-color)
-  }
+	color: var(--light-gray-text-color);
+}
 
-  .price-text_black {
+.price-text_current {
+	font-size: var(--font-size-regular);
+	color: var(--orange-text-color);
+}
+
+.price-text_black {
 	font-size: var(--font-size-small);
 	font-weight: 700;
 	color: black;
-  }
-  
-  .price-text_old {
-	text-decoration: line-through; 
+}
+
+.price-text_old {
+	text-decoration: line-through;
 	color: var(--light-orange-text-color);
 	font-size: var(--font-size-tiny);
-  }
+}
 
-  .price-text_old--invisible {
-	text-decoration: line-through; 
+.price-text_old--invisible {
+	text-decoration: line-through;
 	color: var(--background-white);
 	font-size: var(--font-size-tiny);
-  }
-
-  .price-text--black {
-
-  }
-/* .flex-wrap {
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: column;
-	height: 100%;
-	width: 100%;
-	box-sizing: border-box;
-} */
+}
 
 .relative-container {
 	position: relative;

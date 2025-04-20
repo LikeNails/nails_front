@@ -1,150 +1,151 @@
 .store {
-    font-family: var(--);
-    overflow-y: auto;
-    overflow-x: hidden;
-    max-height: calc(100vh - 85px - 180px);
+	font-family: var(--);
+	overflow-y: auto;
+	overflow-x: hidden;
+	max-height: calc(100vh - 85px - 180px);
 }
 
 .store::-webkit-scrollbar {
-    display: none;
+	display: none;
 }
 
 .gallery {
-    display: grid;
+	display: grid;
 }
 
 .product-category__gallery {
-    column-gap: 30px;
-    row-gap: 30px;
+	column-gap: 30px;
+	row-gap: 30px;
 }
 
 @media (min-width: 1920px) {
-    .product-category__gallery {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
+	.product-category__gallery {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
 }
 
 @media (min-width: 1280px) and (max-width: 1920px) {
-    .product-category__gallery {
-        grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
-    }
+	.product-category__gallery {
+		grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+	}
 }
 
 @media (min-width: 780px) and (max-width: 1280px) {
-    .product-category__gallery {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    }
+	.product-category__gallery {
+		grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	}
 }
 
 @media (min-width: 480px) and (max-width: 780px) {
-    .product-category__gallery {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    }
+	.product-category__gallery {
+		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	}
 }
 
 @media (max-width: 480px) {
-    .product-category__gallery {
-        grid-template-columns: 1fr;
-    }
+	.product-category__gallery {
+		grid-template-columns: 1fr;
+	}
 }
 
 .product-category {
-    padding-bottom: 25px;
+	padding-bottom: 25px;
 }
 
 .product-category__header {
-    z-index: 1000;
-    top: 0;
-    position: sticky;
-    background-color: var(--background-color);
-    padding-bottom: 25px;
-    box-shadow: 0 -5px var(--background-color);
+	z-index: 1000;
+	top: 0;
+	position: sticky;
+	background-color: var(--background-color);
+	padding-bottom: 25px;
+	box-shadow: 0 -5px var(--background-color);
 }
 
 .header--gray-text {
-    color: var(--gray-text-color);
+	color: var(--gray-text-color);
 }
 
 .product {
-    font-weight: var(--font-family-semi-bold);
-    font-size: var(--font-size-regular);
-    max-width: 100%;
-    max-height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 30px;
-    background-color: #FFFFFF
+	font-weight: var(--font-family-semi-bold);
+	font-size: var(--font-size-regular);
+	max-width: 100%;
+	max-height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 30px;
+	background-color: #ffffff;
 }
 
 .product__image-container {
-    box-sizing: border-box;
-    padding: 20px 20px 20px 0;
-    max-width: 220px;
-    width: 100%;
-    height: 100%;
-    position: relative;
+	box-sizing: border-box;
+	padding: 20px 20px 20px 0;
+	max-width: 220px;
+	width: 100%;
+	height: 100%;
+	position: relative;
 }
 
 .product__image {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
+	width: 100%;
+	height: auto;
+	object-fit: contain;
 }
 
 .product__info {
-    box-sizing: border-box;
-    padding: 15px 25px 25px 25px;
-    width: 100%;
-
+	box-sizing: border-box;
+	padding: 15px 25px 25px 25px;
+	width: 100%;
 }
 
 .product__info__h3 {
-    font-weight: bold;
-    color: #333;
-    white-space: nowrap;
+	font-weight: bold;
+	color: #333;
+	white-space: nowrap;
 }
 
 .info__price {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-bottom: 20px;
 }
 
-
-
 .info__rating {
-    display: flex;
-    align-items: center;
-    gap: 5px;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.info__rating-svg {
+	color: var(--orange-text-color);
 }
 
 .start_svg {
-    width: 16px;
-    height: 16px;
+	width: 16px;
+	height: 16px;
 }
 
 .rating span {
-    color: #333;
+	color: #333;
 }
 
 .info__action-button {
-    transition: color 0.1s ease-in-out;
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: bold;
+	transition: color 0.1s ease-in-out;
+	border: none;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: bold;
 }
 
 .info__action-button:active {
-    color: var(--orange-text-color);
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: bold;
+	color: var(--orange-text-color);
+	border: none;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: bold;
 }
 
 .info__rating__svg {
-    color: var(--orange-text-color)
+	color: var(--orange-text-color);
 }
