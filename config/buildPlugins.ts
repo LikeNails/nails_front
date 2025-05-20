@@ -51,6 +51,13 @@ export function buildPlugins({
 				],
 			}),
 		)
+		plugins.push(
+			new DefinePlugin({
+				process: {
+					env: JSON.stringify(process.env),
+				},
+			}),
+		)
 	}
 
 	if (analyzer) {

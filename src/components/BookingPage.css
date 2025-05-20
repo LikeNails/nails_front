@@ -1,0 +1,46 @@
+.booking-page form {
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+.calendar {
+	margin: 0 auto 2rem;
+}
+
+.calendar-header {
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.2rem;
+	margin-bottom: 1rem;
+}
+
+.calendar-days {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	gap: 4px;
+	text-align: center;
+	font-size: 0.9rem;
+}
+
+.calendar-day {
+	padding: 10px;
+	cursor: pointer;
+	border-radius: 50%;
+	transition: background 0.2s;
+}
+
+.calendar-day:hover:not(.past):not(.today) {
+	background: #e0e0e0;
+}
+
+.calendar-day.today {
+	background: #4f46e5;
+	color: white;
+	font-weight: bold;
+}
+
+.calendar-day.past {
+	color: #aaa;
+	pointer-events: none;
+	background: #f0f0f0;
+}

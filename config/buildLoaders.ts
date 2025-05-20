@@ -59,9 +59,20 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
 		test: /\.css$/i,
 		use: [
 			// Injects CSS into the DOM (development) or extracts it into a separate file (production)
-			isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+			'style-loader',
 			// Interprets @import and url() in CSS
 			'css-loader',
+			{
+				loader: 'postcss-loader',
+				options: {
+					postcssOptions: {
+						plugins: {
+							tailwindcss: {},
+							autoprefixer: {},
+						},
+					},
+				},
+			},
 		],
 	}
 
@@ -89,7 +100,16 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
 		],
 	}
 
-	const babelLoader = buildBabelLoader(options)
+	const babelLoader = {
+		test: /\.[jt]sx?$/,
+		exclude: /node_modules/,
+		use: {
+			loader: 'babel-loader',
+			options: {
+				presets: ['@babel/preset-env', '@babel/preset-react'],
+			},
+		},
+	}
 
 	return [
 		assetLoader,
