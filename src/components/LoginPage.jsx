@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router'
-
+import { Link } from 'react-router-dom'
 import { useAppContext } from '@/context/AppContext'
+import { useTranslation } from 'react-i18next'
+
 export const LoginPage = () => {
 	const { login, error, setError, loading } = useAppContext()
 	const [formData, setFormData] = useState({
 		email: '',
 		password: '',
 	})
+
+	const { t } = useTranslation()
 
 	useEffect(() => {
 		setError(null)
@@ -29,7 +32,7 @@ export const LoginPage = () => {
 	return (
 		<div className="max-w-md mx-auto">
 			<h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-				Войдите в свой аккаунт
+				{t('login.title')}
 			</h2>
 
 			<div className="bg-white rounded-lg shadow-md p-6">
@@ -45,7 +48,7 @@ export const LoginPage = () => {
 							htmlFor="email"
 							className="block text-sm font-medium text-gray-700 mb-1"
 						>
-							Email
+							{t('login.emailLabel')}
 						</label>
 						<input
 							type="email"
@@ -63,7 +66,7 @@ export const LoginPage = () => {
 							htmlFor="password"
 							className="block text-sm font-medium text-gray-700 mb-1"
 						>
-							Пароль
+							{t('login.passwordLabel')}
 						</label>
 						<input
 							type="password"
@@ -81,18 +84,20 @@ export const LoginPage = () => {
 						disabled={loading}
 						className="w-full px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition disabled:bg-indigo-300"
 					>
-						{loading ? 'Вход...' : 'Войти'}
+						{loading
+							? t('common.loading')
+							: t('login.submitButton')}
 					</button>
 				</form>
 
 				<div className="mt-6 text-center">
 					<p className="text-sm text-gray-600">
-						Нет аккаунта?{' '}
+						{t('login.noAccount')}{' '}
 						<Link
 							to="/register"
 							className="text-indigo-600 hover:underline"
 						>
-							Зарегистрируйтесь
+							{t('login.registerLink')}
 						</Link>
 					</p>
 				</div>

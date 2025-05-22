@@ -1,18 +1,20 @@
 import React from 'react'
-import { Link } from 'react-router'
+import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+
 export const HomePage = () => {
+	const { t } = useTranslation()
+
 	return (
 		<div className="text-center">
 			<h1 className="text-4xl font-bold text-gray-900 mb-6">
-				Добро пожаловать в{' '}
+				{t('homepage.welcome')}
 				<span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
 					LikeNails
 				</span>
 			</h1>
 			<p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-				Найдите лучшего мастера и запишитесь на прием удобным для вас
-				способом. Мы предлагаем широкий выбор специалистов в различных
-				сферах услуг.
+				{t('homepage.description')}
 			</p>
 
 			<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -34,11 +36,10 @@ export const HomePage = () => {
 						</svg>
 					</div>
 					<h3 className="text-xl font-semibold mb-2">
-						Выбор мастера
+						{t('homepage.feature1.title')}
 					</h3>
 					<p className="text-gray-600">
-						Просмотрите профили мастеров, ознакомьтесь с их услугами
-						и отзывами клиентов.
+						{t('homepage.feature1.description')}
 					</p>
 				</div>
 
@@ -60,11 +61,10 @@ export const HomePage = () => {
 						</svg>
 					</div>
 					<h3 className="text-xl font-semibold mb-2">
-						Удобное расписание
+						{t('homepage.feature2.title')}
 					</h3>
 					<p className="text-gray-600">
-						Выбирайте подходящее время для записи на прием в любое
-						удобное для вас время.
+						{t('homepage.feature2.description')}
 					</p>
 				</div>
 
@@ -86,11 +86,10 @@ export const HomePage = () => {
 						</svg>
 					</div>
 					<h3 className="text-xl font-semibold mb-2">
-						Контроль бюджета
+						{t('homepage.feature3.title')}
 					</h3>
 					<p className="text-gray-600">
-						Сравнивайте цены на услуги разных мастеров и выбирайте
-						наиболее выгодные варианты.
+						{t('homepage.feature3.description')}
 					</p>
 				</div>
 			</div>
@@ -100,7 +99,7 @@ export const HomePage = () => {
 					to="/masters"
 					className="inline-block px-8 py-3 bg-indigo-600 text-white rounded-md text-lg font-medium hover:bg-indigo-700 transition"
 				>
-					Найти мастера
+					{t('homepage.findMaster')}
 				</Link>
 			</div>
 		</div>

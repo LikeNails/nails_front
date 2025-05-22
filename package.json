@@ -3,6 +3,7 @@
 	"version": "1.0.0",
 	"description": "Test project for neoflex ",
 	"main": "index.js",
+	"proxy": "http://localhost:5000",
 	"scripts": {
 		"build:dev": "webpack --env mode=development",
 		"build:prod": "webpack --env mode=production",
@@ -18,8 +19,10 @@
 		"axios": "^1.9.0",
 		"dotenv": "^16.5.0",
 		"fork-ts-checker-webpack-plugin": "^9.1.0",
+		"i18next": "^25.2.0",
 		"react": "^19.1.0",
 		"react-dom": "^19.1.0",
+		"react-i18next": "^15.5.1",
 		"react-router": "^7.5.0",
 		"react-router-dom": "^7.5.0"
 	},

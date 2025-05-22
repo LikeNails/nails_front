@@ -19,7 +19,8 @@ export const AppProvider = ({ children }) => {
 	const [error, setError] = useState(null)
 	const [availableSlots, setAvailableSlots] = useState([])
 	const [timeslots, setTimeslots] = useState([])
-
+	const [masterImages, setMasterImages] = useState([])
+	const [currentMaster, setCurrentMaster] = useState([])
 	// Дополнительные состояния
 	const [currentMasterServices, setCurrentMasterServices] = useState([])
 
@@ -80,7 +81,6 @@ export const AppProvider = ({ children }) => {
 
 			if (token) {
 				try {
-					// Получаем данные пользователя
 					const userResult = await api.getCurrentUser()
 					if (userResult.success) {
 						setUser(userResult.user)
@@ -124,6 +124,7 @@ export const AppProvider = ({ children }) => {
 			if (result.success) {
 				setUser(result.user)
 				navigate('/')
+				window.location.reload()
 			} else {
 				setError(result.error || 'Ошибка входа')
 			}
@@ -162,6 +163,25 @@ export const AppProvider = ({ children }) => {
 			setMasters([])
 			setCurrentMasterServices([])
 			navigate('/login')
+		}
+	}
+
+	const refreshMasterImages = async () => {
+		try {
+			const result = await api.getMasterImages()
+			if (result && result.success) {
+				const masterImagesArray = result.data
+
+				if (!Array.isArray(masterImagesArray)) {
+					setError('Не получилось загрузить изображения')
+					return
+				}
+				setMasterImages(masterImagesArray)
+			} else {
+				setError(result?.error)
+			}
+		} catch (error) {
+			setError(error)
 		}
 	}
 
@@ -248,6 +268,16 @@ export const AppProvider = ({ children }) => {
 		}
 	}
 
+	const getOffers = async () => {
+		try {
+			const result = await api.getOffers()
+			return result
+		} catch (er) {
+			console.log('Не получилось достать заказы')
+			return { success: false, error: err.message }
+		}
+	}
+
 	// Получение свободных слотов мастера
 	const getMasterFreeSlots = async (
 		masterId,
@@ -270,7 +300,7 @@ export const AppProvider = ({ children }) => {
 	}
 
 	// Запись к мастеру
-	const bookToMaster = async (masterId, timeslotId, selectedDate) => {
+	const bookToMaster = async (masterId, timeslot, selectedDate) => {
 		setLoading(true)
 		setError(null)
 
@@ -301,10 +331,14 @@ export const AppProvider = ({ children }) => {
 
 			const bookingData = {
 				scheduleId,
-				timeslotId,
+				timeslotId: timeslot._id,
 				monthId,
 				userId: user._id,
 				day: day,
+				masterId: masterId,
+				monthNumber: month,
+				yearNumber: year,
+				time: `${timeslot.start}-${timeslot.end}`,
 			}
 
 			const response = await privateApiRequest(
@@ -336,8 +370,11 @@ export const AppProvider = ({ children }) => {
 				masters,
 				availableSlots,
 				timeslots,
-
+				masterImages,
+				currentMaster,
 				// Actions
+				setCurrentMaster,
+				refreshMasterImages,
 				setAvailableSlots,
 				getMasterFreeSlotsByDate,
 				setError,
@@ -349,6 +386,7 @@ export const AppProvider = ({ children }) => {
 				getMasterFreeSlots,
 				bookToMaster,
 				setTimeslots,
+				getOffers,
 
 				// Данные
 				currentMasterServices,

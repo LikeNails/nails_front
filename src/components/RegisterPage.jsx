@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useAppContext } from '../context/AppContext'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 export const RegisterPage = () => {
 	const { register, error, loading } = useAppContext()
@@ -12,6 +13,7 @@ export const RegisterPage = () => {
 		confirm_password: '',
 		phone_number: '',
 	})
+	const { t } = useTranslation()
 
 	const handleChange = (e) => {
 		setFormData({
@@ -24,7 +26,7 @@ export const RegisterPage = () => {
 		e.preventDefault()
 
 		if (formData.password !== formData.confirm_password) {
-			setError('Пароли не совпадают')
+			setError(t('register.passwordMismatch'))
 			return
 		}
 
@@ -37,7 +39,7 @@ export const RegisterPage = () => {
 	return (
 		<div className="max-w-md mx-auto mt-10">
 			<h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-				Создать аккаунт
+				{t('register.title')}
 			</h2>
 
 			<div className="bg-white rounded-lg shadow-md p-6">
@@ -55,7 +57,7 @@ export const RegisterPage = () => {
 								htmlFor="first_name"
 								className="block text-sm font-medium text-gray-700 mb-1"
 							>
-								Имя
+								{t('register.firstNameLabel')}
 							</label>
 							<input
 								type="text"
@@ -73,7 +75,7 @@ export const RegisterPage = () => {
 								htmlFor="family_name"
 								className="block text-sm font-medium text-gray-700 mb-1"
 							>
-								Фамилия
+								{t('register.lastNameLabel')}
 							</label>
 							<input
 								type="text"
@@ -112,7 +114,7 @@ export const RegisterPage = () => {
 							htmlFor="phone_number"
 							className="block text-sm font-medium text-gray-700 mb-1"
 						>
-							Номер телефона
+							{t('register.phoneNumberLabel')}
 						</label>
 						<input
 							type="tel"
@@ -132,7 +134,7 @@ export const RegisterPage = () => {
 							htmlFor="password"
 							className="block text-sm font-medium text-gray-700 mb-1"
 						>
-							Пароль
+							{t('register.passwordLabel')}
 						</label>
 						<input
 							type="password"
@@ -151,7 +153,7 @@ export const RegisterPage = () => {
 							htmlFor="confirm_password"
 							className="block text-sm font-medium text-gray-700 mb-1"
 						>
-							Подтвердите пароль
+							{t('register.confirmPasswordLabel')}
 						</label>
 						<input
 							type="password"
@@ -170,19 +172,21 @@ export const RegisterPage = () => {
 						disabled={loading}
 						className="w-full px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition disabled:bg-indigo-300"
 					>
-						{loading ? 'Регистрация...' : 'Зарегистрироваться'}
+						{loading
+							? t('common.loading')
+							: t('register.submitButton')}
 					</button>
 				</form>
 
 				{/* Ссылка на вход */}
 				<div className="mt-6 text-center">
 					<p className="text-sm text-gray-600">
-						Уже есть аккаунт?{' '}
+						{t('register.alreadyHaveAccount')}{' '}
 						<Link
 							to="/login"
 							className="text-indigo-600 hover:underline"
 						>
-							Войдите
+							{t('register.loginLink')}
 						</Link>
 					</p>
 				</div>

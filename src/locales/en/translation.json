@@ -1,0 +1,110 @@
+{
+	"navbar": {
+		"home": "Home",
+		"masters": "Masters",
+		"dashboard": "Dashboard",
+		"hello": "Hello",
+		"user": "User",
+		"logout": "Logout",
+		"login": "Login",
+		"register": "Register"
+	},
+	"errors": {
+		"selectDateAndTime": "Please select date and time",
+		"loginRequired": "Please log in to book an appointment"
+	},
+	"booking": {
+		"title": "Book a Master",
+		"selectDate": "Select Date",
+		"availableTimeOn": "Available time on",
+		"noSlots": "No available slots for this date",
+		"bookButton": "Book Now",
+		"successMessage": "You have successfully booked!",
+		"masterNotFound": "Master not found"
+	},
+	"days": {
+		"monday": "Mon",
+		"tuesday": "Tue",
+		"wednesday": "Wed",
+		"thursday": "Thu",
+		"friday": "Fri",
+		"saturday": "Sat",
+		"sunday": "Sun"
+	},
+	"months": {
+		"january": "January",
+		"february": "February",
+		"march": "March",
+		"april": "April",
+		"may": "May",
+		"june": "June",
+		"july": "July",
+		"august": "August",
+		"september": "September",
+		"october": "October",
+		"november": "November",
+		"december": "December"
+	},
+	"common1": {
+		"goBack": "Go Back"
+	},
+
+	"homepage": {
+		"welcome": "Welcome to ",
+		"description": "Find the best master and book an appointment at your convenience.",
+		"feature1": {
+			"title": "Choose a Master",
+			"description": "Browse master profiles, view their services and customer reviews."
+		},
+		"feature2": {
+			"title": "Flexible Schedule",
+			"description": "Select the most suitable time for your appointment."
+		},
+		"feature3": {
+			"title": "Budget Control",
+			"description": "Compare prices of different masters' services and choose the most cost-effective options."
+		},
+		"findMaster": "Find a Master"
+	},
+	"footer": {
+		"copyright": "© 2025 All rights reserved",
+		"address": "Moscow, Flower Street, 15",
+		"phone": "Phone: +7 (495) 123-45-67",
+		"email": "Email: info@likenails.ru"
+	},
+	"masterCard": {
+		"viewAllServices": "View all services",
+		"bookButton": "Book now"
+	},
+	"masters": {
+		"title": "Our Masters",
+		"noMasters": "No available masters"
+	},
+	"common": {
+		"loading": "Loading..."
+	},
+	"services": {
+		"title": "Master's Services",
+		"noServices": "No available services",
+		"price": "Price"
+	},
+	"login": {
+		"title": "Sign In to Your Account",
+		"emailLabel": "Email",
+		"passwordLabel": "Password",
+		"submitButton": "Sign In",
+		"noAccount": "Don't have an account?",
+		"registerLink": "Register"
+	},
+	"register": {
+		"title": "Create an Account",
+		"firstNameLabel": "First Name",
+		"lastNameLabel": "Last Name",
+		"phoneNumberLabel": "Phone Number",
+		"passwordLabel": "Password",
+		"confirmPasswordLabel": "Confirm Password",
+		"submitButton": "Sign Up",
+		"alreadyHaveAccount": "Already have an account?",
+		"loginLink": "Log in"
+	}
+}

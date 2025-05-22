@@ -1,6 +1,6 @@
 // App.tsx
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { AppProvider } from './context/AppContext'
 import MastersPage from './components/MastersPage'
@@ -11,10 +11,21 @@ import { RegisterPage } from './components/RegisterPage'
 import { Navbar } from './components/Navigation/Navbar'
 import { Footer } from './components/Footer/Footer'
 import { HomePage } from './components/HomePage'
+import ProtectedRoute from './components/ProtectedRoute'
+import { ToastProvider } from './components/ToastProvider'
+import { setNavigate } from './api/api'
+import UserDashboard from './components/UserDashboard/UserDashboard'
+import { useNavigate } from 'react-router-dom'
 
-const App = () => {
+const AppWithRouter = () => {
+	const navigate = useNavigate()
+
+	useEffect(() => {
+		setNavigate(navigate)
+	}, [navigate])
+
 	return (
-		<BrowserRouter>
+		<ToastProvider>
 			<AppProvider>
 				<div className="flex flex-col min-h-screen bg-gray-50">
 					<Navbar />
@@ -28,8 +39,20 @@ const App = () => {
 								element={<ServicesPage />}
 							/>
 							<Route
-								path="/booking/:masterId"
-								element={<BookingPage />}
+								path="/booking"
+								element={
+									<ProtectedRoute>
+										<BookingPage />
+									</ProtectedRoute>
+								}
+							/>
+							<Route
+								path="/dashboard"
+								element={
+									<ProtectedRoute>
+										<UserDashboard />
+									</ProtectedRoute>
+								}
 							/>
 							<Route path="/login" element={<LoginPage />} />
 							<Route
@@ -46,8 +69,14 @@ const App = () => {
 					<Footer />
 				</div>
 			</AppProvider>
-		</BrowserRouter>
+		</ToastProvider>
 	)
 }
 
-export default App
+const WrappedApp = () => (
+	<BrowserRouter>
+		<AppWithRouter />
+	</BrowserRouter>
+)
+
+export default WrappedApp

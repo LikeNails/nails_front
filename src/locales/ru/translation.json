@@ -1,0 +1,111 @@
+{
+	"navbar": {
+		"home": "Главная",
+		"masters": "Мастера",
+		"dashboard": "Личный кабинет",
+		"hello": "Привет",
+		"user": "Пользователь",
+		"logout": "Выход",
+		"login": "Вход",
+		"register": "Регистрация"
+	},
+	"errors": {
+		"selectDateAndTime": "Выберите дату и время",
+		"loginRequired": "Пожалуйста, войдите в аккаунт"
+	},
+	"homepage": {
+		"welcome": "Добро пожаловать в ",
+		"description": "Найдите лучшего мастера и запишитесь на прием удобным для вас способом.",
+		"feature1": {
+			"title": "Выбор мастера",
+			"description": "Просмотрите профили мастеров, ознакомьтесь с их услугами и отзывами клиентов."
+		},
+		"feature2": {
+			"title": "Удобное расписание",
+			"description": "Выбирайте подходящее время для записи на прием в любое удобное для вас время."
+		},
+		"feature3": {
+			"title": "Контроль бюджета",
+			"description": "Сравнивайте цены на услуги разных мастеров и выбирайте наиболее выгодные варианты."
+		},
+		"findMaster": "Найти мастера"
+	},
+	"footer": {
+		"copyright": "© 2025 Все права защищены",
+		"address": "г. Москва, ул. Цветочная, д. 15",
+		"phone": "Телефон: +7 (495) 123-45-67",
+		"email": "Email: info@likenails.ru"
+	},
+	"masterCard": {
+		"viewAllServices": "Все услуги",
+		"bookButton": "Записаться"
+	},
+	"masters": {
+		"title": "Наши мастера",
+		"noMasters": "Нет доступных мастеров"
+	},
+	"common": {
+		"loading": "Загрузка..."
+	},
+
+	"booking": {
+		"title": "Запись к мастеру",
+		"selectDate": "Выберите дату",
+		"availableTimeOn": "Доступное время на",
+		"noSlots": "Нет доступных слотов на эту дату",
+		"bookButton": "Записаться",
+		"successMessage": "Вы успешно записались!",
+		"masterNotFound": "Мастер не найден"
+	},
+	"days": {
+		"monday": "Пн",
+		"tuesday": "Вт",
+		"wednesday": "Ср",
+		"thursday": "Чт",
+		"friday": "Пт",
+		"saturday": "Сб",
+		"sunday": "Вс"
+	},
+	"months": {
+		"january": "Январь",
+		"february": "Февраль",
+		"march": "Март",
+		"april": "Апрель",
+		"may": "Май",
+		"june": "Июнь",
+		"july": "Июль",
+		"august": "Август",
+		"september": "Сентябрь",
+		"october": "Октябрь",
+		"november": "Ноябрь",
+		"december": "Декабрь"
+	},
+	"common1": {
+		"goBack": "Назад"
+	},
+
+	"services": {
+		"title": "Услуги мастера",
+		"noServices": "Нет доступных услуг",
+		"price": "Цена"
+	},
+	"login": {
+		"title": "Войдите в свой аккаунт",
+		"emailLabel": "Email",
+		"passwordLabel": "Пароль",
+		"submitButton": "Войти",
+		"noAccount": "Нет аккаунта?",
+		"registerLink": "Зарегистрируйтесь"
+	},
+	"register": {
+		"title": "Создать аккаунт",
+		"firstNameLabel": "Имя",
+		"lastNameLabel": "Фамилия",
+		"phoneNumberLabel": "Номер телефона",
+		"passwordLabel": "Пароль",
+		"confirmPasswordLabel": "Подтвердите пароль",
+		"submitButton": "Зарегистрироваться",
+		"alreadyHaveAccount": "Уже есть аккаунт?",
+		"loginLink": "Войдите"
+	}
+}

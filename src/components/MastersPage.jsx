@@ -1,9 +1,20 @@
 import React, { useEffect } from 'react'
 import { useAppContext } from '../context/AppContext'
+import { useTranslation } from 'react-i18next'
 import MasterCard from './MasterCard'
 
 const MastersPage = () => {
-	const { masters, refreshMasters, error, loading } = useAppContext()
+	const {
+		masters,
+		refreshMasters,
+		error,
+		loading,
+		masterImages,
+		refreshMasterImages,
+		setCurrentMaster,
+	} = useAppContext()
+
+	const { t } = useTranslation()
 
 	useEffect(() => {
 		const loadMasters = async () => {
@@ -15,12 +26,22 @@ const MastersPage = () => {
 		}
 	}, [masters, refreshMasters])
 
+	useEffect(() => {
+		const loadImages = async () => {
+			await refreshMasterImages()
+		}
+
+		if (!masterImages || masterImages.length === 0) {
+			loadImages()
+		}
+	}, [masterImages, refreshMasterImages])
+
 	return (
-		<div className="flex flex-col bg-gray-50 flex-grow-w-fill">
+		<div className="flex flex-col bg-gray-50 flex-grow">
 			{/* Основной контент */}
 			<main className="flex-grow container mx-auto px-4 py-8">
 				<h1 className="text-3xl font-bold mb-6 text-center">
-					Наши мастера
+					{t('masters.title')}
 				</h1>
 
 				{error && (
@@ -35,12 +56,19 @@ const MastersPage = () => {
 					</div>
 				) : masters?.length === 0 ? (
 					<p className="text-gray-500 text-center py-8">
-						Нет доступных мастеров
+						{t('masters.noMasters')}
 					</p>
 				) : (
 					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 						{masters.map((master) => (
-							<MasterCard key={master._id} master={master} />
+							<MasterCard
+								key={master._id}
+								master={master}
+								setCurrentMaster={setCurrentMaster}
+								masterImage={masterImages.find(
+									(image) => image.master === master._id,
+								)}
+							/>
 						))}
 					</div>
 				)}

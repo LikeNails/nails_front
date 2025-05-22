@@ -6,7 +6,36 @@ const apiClient = axios.create({
 	headers: {
 		'Content-Type': 'application/json',
 	},
+	timeout: 10000,
 })
+
+let navigateFunction = null
+
+export const setNavigate = (navigate) => {
+	navigateFunction = navigate
+}
+
+const jwtDecode = (token) => {
+	const base64Url = token.split('.')[1]
+	const base64 = base64Url.replace(/-/g, '_').replace(/_/g, '/')
+	const jsonPayload = decodeURIComponent(
+		atob(base64)
+			.split('')
+			.map(c => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2))
+			.join(''),
+	)
+	return JSON.parse(jsonPayload)
+}
+
+// Проверка истечения срока действия токена
+const isTokenExpired = (token) => {
+	try {
+		const decoded = jwtDecode(token)
+		return decoded.exp < Date.now() / 1000
+	} catch (error) {
+		return true
+	}
+}
 
 apiClient.interceptors.request.use((config) => {
 	const token = localStorage.getItem('accessToken')
@@ -16,21 +45,46 @@ apiClient.interceptors.request.use((config) => {
 	return config
 })
 
-// Интерсептор запросов — добавляет токен, если он есть
-apiClient.interceptors.response.use(
-	(response) => response,
-	async (error) => {
-		const originalRequest = error.config
-		if (error.response?.status === 401 && !originalRequest._retry) {
-			originalRequest._retry = true
-			const newToken = await refreshTokens()
-			if (newToken) {
-				originalRequest.headers['Authorization'] = `Bearer ${newToken}`
-				return axios(originalRequest)
+apiClient.interceptors.request.use(
+	async (config) => {
+		let accessToken = localStorage.getItem('accessToken')
+
+		if (accessToken && isTokenExpired(accessToken)) {
+			try {
+				const refreshToken = localStorage.getItem('refreshToken')
+				const response = await axios.post('/refresh', {
+					refresh_token: refreshToken,
+				})
+
+				accessToken = response.data.access_token
+				localStorage.setItem('accessToken', accessToken)
+
+				config.headers['Authorization'] = `Bearer ${accessToken}`
+			} catch (error) {
+				localStorage.removeItem('accessToken')
+				localStorage.removeItem('refreshToken')
+
+				// Используем navigate вместо window.location.href
+				if (navigateFunction) {
+					navigateFunction('/login', {
+						state: {
+							message: 'Сессия истекла. Пожалуйста, войдите снова.',
+							type: 'error',
+						},
+					})
+				}
+
+				return Promise.reject(error)
 			}
+		} else if (accessToken) {
+			config.headers['Authorization'] = `Bearer ${accessToken}`
 		}
+
+		return config
+	},
+	(error) => {
 		return Promise.reject(error)
-	}
+	},
 )
 
 // Парсинг JWT токена
@@ -52,8 +106,34 @@ function parseJwt(token) {
 	}
 }
 
+
 export const api = {
 	// Получение данных текущего пользователя
+
+	getMasterImages: async () => {
+		try {
+			const response = await apiClient.post('/master-image/get')
+			return { success: true, data: response.data.models }
+		} catch (error) {
+			return {
+				success: false,
+				error: error.response?.data?.message || 'Ошибка загрузки изображений'
+			}
+		}
+	},
+
+	getOffers: async () => {
+		try {
+			const response = await apiClient.post('/offer/get')
+			return { success: true, data: response.data.models }
+		} catch (error) {
+			return {
+				success: false,
+				error: error.response?.data?.message || 'Ошибка загрузки изображений'
+			}
+		}
+	},
+
 	getCurrentUser: async () => {
 		try {
 			const response = await apiClient.post('/me')
@@ -90,31 +170,25 @@ export const api = {
 	// Вход пользователя
 	login: async (email, password) => {
 		try {
-			const response = await apiClient.post('/login', { email, password })
-			const { accessToken, refreshToken } = response.data
-			console.log(accessToken)
+			const response = await apiClient.post('/login', { email, password });
+			const { accessToken, refreshToken } = response.data;
 
-			localStorage.setItem('accessToken', accessToken)
-			localStorage.setItem('refreshToken', refreshToken)
+			localStorage.setItem('accessToken', accessToken);
+			localStorage.setItem('refreshToken', refreshToken);
 
-			const meResponse = await axios.post(
-				'http://127.0.0.1:5000/api/v1/me', {},
-				{
-					headers: {
-						'Content-Type': 'application/json',
-						Authorization: `Bearer ${accessToken}`,
-					},
-				}
-			)
+			// Запрос на /me
+			const meResponse = await apiClient.post('/me', {}, {
+			});
 
-			const user = meResponse.data
-			console.log(user)
-			return { success: true, data: user }
+			const user = meResponse.data;
+
+			return { success: true, data: { user, accessToken, refreshToken } };
+
 		} catch (error) {
 			return {
 				success: false,
 				error: error.response?.data?.message || 'Ошибка входа',
-			}
+			};
 		}
 	},
 

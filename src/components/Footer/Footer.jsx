@@ -1,8 +1,9 @@
-// src/components/Footer.jsx
-
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 
 export const Footer = () => {
+	const { t } = useTranslation()
+
 	return (
 		<footer className="bg-white border-t mt-auto py-6">
 			<div className="container mx-auto px-4">
@@ -13,7 +14,7 @@ export const Footer = () => {
 							LikeNails
 						</h3>
 						<p className="text-gray-600 mt-2">
-							© 2025 Все права защищены
+							{t('footer.copyright')}
 						</p>
 					</div>
 
@@ -21,7 +22,7 @@ export const Footer = () => {
 					<div className="text-center md:text-right space-y-2">
 						<div>
 							<p className="text-gray-700 font-medium">
-								г. Москва, ул. Цветочная, д. 15
+								{t('footer.address')}
 							</p>
 						</div>
 						<div>
@@ -29,7 +30,7 @@ export const Footer = () => {
 								href="tel:+74951234567"
 								className="text-gray-600 hover:text-indigo-600 transition-colors duration-200"
 							>
-								Телефон: +7 (495) 123-45-67
+								{t('footer.phone')}
 							</a>
 						</div>
 						<div>
@@ -37,7 +38,7 @@ export const Footer = () => {
 								href="mailto:info@likenails.ru"
 								className="text-gray-600 hover:text-indigo-600 transition-colors duration-200"
 							>
-								Email: info@likenails.ru
+								{t('footer.email')}
 							</a>
 						</div>
 					</div>

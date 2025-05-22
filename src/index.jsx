@@ -1,4 +1,5 @@
 import './index.css'
+import './l18n'
 import React from 'react'
 
 import App from './App'

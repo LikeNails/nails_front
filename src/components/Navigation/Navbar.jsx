@@ -1,13 +1,14 @@
-// src/components/Navigation/Navbar.jsx
-
 import React from 'react'
 import { useAppContext } from '@/context/AppContext'
 import { Link, useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import { LanguageSwitcher } from '../LanguageSwitcher'
 import './Navbar.css'
 
 export const Navbar = () => {
 	const { user, logout } = useAppContext()
 	const navigate = useNavigate()
+	const { t } = useTranslation()
 
 	return (
 		<nav className="bg-white shadow-md mb-6">
@@ -27,14 +28,15 @@ export const Navbar = () => {
 							to="/"
 							className="text-gray-700 hover:text-indigo-600 transition duration-300"
 						>
-							Главная
+							{t('navbar.home')}
 						</Link>
 						<Link
 							to="/masters"
 							className="text-gray-700 hover:text-indigo-600 transition duration-300"
 						>
-							Мастера
+							{t('navbar.masters')}
 						</Link>
+						<LanguageSwitcher />
 					</div>
 				</div>
 
@@ -42,9 +44,11 @@ export const Navbar = () => {
 				<div className="flex items-center space-x-4">
 					{user ? (
 						<>
+							<Link to="/dashboard">{t('navbar.dashboard')}</Link>
 							{/* Отображение имени пользователя */}
 							<span className="text-sm text-gray-600 hidden md:block">
-								Привет, {user.first_name || 'Пользователь'}
+								{t('navbar.hello')},{' '}
+								{user.first_name || t('navbar.user')}
 							</span>
 
 							<button
@@ -52,7 +56,7 @@ export const Navbar = () => {
 								onClick={logout}
 								className="px-4 py-2 text-sm bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition duration-300"
 							>
-								Выход
+								{t('navbar.logout')}
 							</button>
 						</>
 					) : (
@@ -61,13 +65,13 @@ export const Navbar = () => {
 								to="/login"
 								className="text-gray-700 hover:text-indigo-600 transition duration-300 hidden md:block"
 							>
-								Вход
+								{t('navbar.login')}
 							</Link>
 							<Link
 								to="/register"
 								className="px-4 py-2 text-sm bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition duration-300"
 							>
-								Регистрация
+								{t('navbar.register')}
 							</Link>
 						</>
 					)}
